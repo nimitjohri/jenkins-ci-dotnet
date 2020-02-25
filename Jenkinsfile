@@ -7,10 +7,7 @@ environment {
 
 stages {
 stage ('Checkout') {
-            steps {
-                 withCredentials([usernamePassword(credentialsId: 'cicdpipeline', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                    checkout scm
-                 }
+            git 'https://github.com/nimitjohri/jenkins-ci-dotnet.git' 
             }
 }
 stage ('Restore Packages') {     
